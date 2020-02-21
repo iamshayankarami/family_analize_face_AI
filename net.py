@@ -7,7 +7,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 
 use_cuda = False
-pretrained_model = ""
+pretrained_model = "/data/family1/george1.jpg"
 
 
 class net(nn.Module):
@@ -27,8 +27,10 @@ class net(nn.Module):
         x = self.fc2(x)
         return F.log_softmax(x, dim=1)
 
+
 device = torch.device("cuda" if (use_cuda and torch.cuda.is_available()) else "cpu")
 print(device)
 model = net().to(device)
-model.load_state_dict(torch.load(pretrained_model, map_location='cpu'))
+#model.load_state_dict(torch.load(pretrained_model, map_location='cpu'))
 model.eval()
+

@@ -1,41 +1,11 @@
 <html>
-     <head>
-         <title>{{ title }}</title>
-		<script>
-			function ShowCam() {
-				Webcam.set({
-        			width: 320,
-        			height: 240,
-        			image_format: 'jpeg',
-        			jpeg_quality: 100
-    			});
-    			Webcam.attach('#my_camera');
-			}
-			window.onload= ShowCam;
-
-			function snap() {
-    			Webcam.snap( function(data_uri) {
-        		// display results in page
-        		document.getElementById('results').innerHTML = 
-        		'<img id="image" src="'+data_uri+'"/>';
-      			} );      
-			}
-		</script>
-     </head>
-     <body>
-         <form method="POST" enctype="multipart/form-data" id="myForm">
-			<table>
-				<tr>
-					<td>Name/EmailID</td>
-					<td>: <input type="text" name="userID"></td>
-				</tr>
-				<tr>
-					<td><input type="button" value="Upload" onlick="upload()"></td>
-				</tr>
-			</table>
-		</form>
-		<div id="my_camera"></div>
-		<input type="button" onclick="snap()" value="Snap">
-		<div id="results"></div>
-     </body>
- </html>
+    <div id="upload">
+        <h1>UPLOAD</h1>
+        <form action="/" method=post enctype=,ultipart/form-data>
+            <p>
+                <input type=file name=file><br />
+                <input type=submit value=Upload>
+            </p>
+        </form>
+    </div>  		
+</html>
